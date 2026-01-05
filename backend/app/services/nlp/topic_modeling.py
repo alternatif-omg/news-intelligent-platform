@@ -1,8 +1,8 @@
 TOPIC_KEYWORDS = {
-    "politik": {"pemilu", "presiden", "parlemen"},
-    "ekonomi": {"inflasi", "rupiah", "pasar"},
-    "teknologi": {"ai", "teknologi", "startup"},
-    "olahraga": {"liga", "gol", "pemain"}
+    "politik": {"pemilu", "presiden", "parlemen", "pemerintah"},
+    "ekonomi": {"inflasi", "rupiah", "pasar", "bisnis", "crypto"},
+    "teknologi": {"ai", "teknologi", "startup", "digital", "blockchain"},
+    "olahraga": {"liga", "gol", "pemain", "tim","pelatih", "lapangan"}
 }
 
 
