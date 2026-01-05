@@ -1,10 +1,14 @@
-from pydantic_settings import BaseSettings
+from pydantic import BaseSettings
 
 
 class Settings(BaseSettings):
-    ENV: str = "development"
-    DATABASE_URL: str = "postgresql://postgres:postgres@localhost:5432/news_db"
-    REDIS_URL: str = "redis://localhost:6379"
+    app_env: str = "development"
+    app_name: str = "News Intelligence Platform"
+
+    database_url: str
+    redis_host: str = "localhost"
+    redis_port: int = 6379
+    news_api_key: str
 
     class Config:
         env_file = ".env"
