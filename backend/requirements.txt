@@ -6,3 +6,5 @@ pydantic-settings
 python-dotenv
 requests
 beautifulsoup4
+pytest
+httpx

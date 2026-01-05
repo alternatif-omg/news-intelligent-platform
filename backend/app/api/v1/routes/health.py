@@ -1,11 +1,21 @@
-from fastapi import APIRouter
 
-router = APIRouter()
+from fastapi import APIRouter, Depends
+from sqlalchemy.orm import Session
+
+from app.core.database import get_db
+
+router = APIRouter(prefix="/health", tags=["Health"])
 
 
-@router.get("/health")
+@router.get("/")
 def health_check():
-    return {
-        "status": "ok",
-        "service": "news-intelligence-backend"
-    }
+    return {"status": "ok"}
+
+
+@router.get("/ready")
+def readiness_check(db: Session = Depends(get_db)):
+    try:
+        db.execute("SELECT 1")
+        return {"status": "ready"}
+    except Exception:
+        return {"status": "db not ready"}
