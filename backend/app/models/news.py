@@ -8,7 +8,10 @@ class News(Base):
     id = Column(Integer, primary_key=True, index=True)
     title = Column(String(255), nullable=False)
     content = Column(Text, nullable=False)
+    processed_content = Column(Text)        # tambahan untuk NLP tokens
     source = Column(String(100))
     category = Column(String(50))
-    published_at = Column(DateTime, default=datetime.utcnow)
+    url = Column(String(500))               # untuk link artikel
+    image_url = Column(String(500))         # untuk URL gambar
+    published_at = Column(DateTime)         # harus datetime, bukan string
     created_at = Column(DateTime, default=datetime.utcnow)

@@ -8,3 +8,5 @@ requests
 beautifulsoup4
 pytest
 httpx
+redis>=5.0.0
+python-dateutil>=2.9.0
